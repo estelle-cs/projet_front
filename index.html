@@ -6,16 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <h1>Les éléments du thème</h1>
     <div class="form">
-        Name: <input type="text" id="name_input">
-        Age: <input type="number" id="age_input">
+        <h2>Ajoutez un élément :</h2>
+        <p id="alerte_doublon" style="color:red; display:none;">Cette élément existe déjà.</p>
+        <p id="alerte_miss" style="color:red; display:none;">Veuillez remplir tous les champs.</p>
+        <label for="name">Nom</label>
+        <input type="text" id="name_input">
+        <label for="age">Age</label>
+        <input type="number" id="age_input">
         <button onclick="add_card()">Ajouter</button>
     </div>
+    <p id="alerte_doublon_edit" style="color:red; display:none;">Cet élément existe déjà.</p><br>
     <div id="content"></div>
 
-    <button onclick="load_data()">Afficher</button>
+    <!--PRISE DE PHOTOS -->
+    <p><button onclick="getStream()">Ouvrir la caméra</button></p>
+    <p><video autoplay style="height: 180px; width: 240px;"></video></p>
+    <p><button onclick="takePhoto()">Prendre la photo</button></p>
+    <p><img id="imageTag" width="240" height="180"></p>
+
+    <!--AFFICHAGE DE LA MEMOIRE-->
+    Your device memory is ~<b id="result">unknown</b> GiB.
+    
+        
+    
+
+    
+    
+
     
 </body>
 </html>
