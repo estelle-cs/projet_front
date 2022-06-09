@@ -7,30 +7,51 @@
     <title>Document</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Les éléments du thème</h1>
-    <div class="form">
-        <h2>Ajoutez un élément :</h2>
-        <p id="alerte_doublon" style="color:red; display:none;">Cette élément existe déjà.</p>
-        <p id="alerte_miss" style="color:red; display:none;">Veuillez remplir tous les champs.</p>
-        <label for="name">Nom</label>
-        <input type="text" id="name_input">
-        <label for="age">Age</label>
-        <input type="number" id="age_input">
-        <button onclick="add_card()">Ajouter</button>
+    <nav></nav>
+    <div id="page">
+        <h1>La liste de mes séries</h1>
+
+        <!--FORMULAIRE D'AJOUT -->
+        <div class="form">
+            <h2>Ajouter une série à ma liste :</h2>
+            <p id="alerte_doublon" style="color:red; display:none;">Cette élément existe déjà.</p>
+            <p id="alerte_miss" style="color:red; display:none;">Veuillez remplir tous les champs.</p>
+            
+            <div id="form_elements">
+                <div class="form_element">
+                    <label for="name">Nom</label><br>
+                    <input class="input_add_form" type="text" id="name_input">
+                </div>
+                <div class="form_element">
+                    <label for="age">Age</label><br>
+                    <input class="input_add_form" type="number" id="age_input">
+                </div>
+            </div>
+            
+            <button class="btn_add_form" onclick="add_card()">Ajouter à ma liste</button>
+        </div>
+        <p id="alerte_doublon_edit" style="color:red; display:none;">Cet élément existe déjà.</p><br>
+
+        <!--AFFICHAGE DES ELEMENTS-->
+        <div id="content"></div>
+
+        <!--PRISE DE PHOTOS -->
+        <p><button onclick="getStream()">Ouvrir la caméra</button></p>
+        <p><video autoplay style="height: 180px; width: 240px;"></video></p>
+        <p><button onclick="takePhoto()">Prendre la photo</button></p>
+        <p><img id="imageTag" width="240" height="180"></p>
+
+        <!--AFFICHAGE DE LA MEMOIRE-->
+        Your device memory is ~<b id="result">unknown</b> GiB.
+    
+        
+
     </div>
-    <p id="alerte_doublon_edit" style="color:red; display:none;">Cet élément existe déjà.</p><br>
-    <div id="content"></div>
-
-    <!--PRISE DE PHOTOS -->
-    <p><button onclick="getStream()">Ouvrir la caméra</button></p>
-    <p><video autoplay style="height: 180px; width: 240px;"></video></p>
-    <p><button onclick="takePhoto()">Prendre la photo</button></p>
-    <p><img id="imageTag" width="240" height="180"></p>
-
-    <!--AFFICHAGE DE LA MEMOIRE-->
-    Your device memory is ~<b id="result">unknown</b> GiB.
     
         
     
