@@ -28,11 +28,24 @@
                     <input class="input_add_form" type="text" id="name_input">
                 </div>
                 <div class="form_element">
-                    <label for="age">Age</label><br>
-                    <input class="input_add_form" type="number" id="age_input">
+                    <label for="seasons">Nombre de saisons</label><br>
+                    <input class="input_add_form" type="number" id="seasons_input">
+                </div>
+                <div class="form_element">
+                    <label for="plateform">Plateforme</label><br>
+                    <select class="input_add_form" id="plateform_input">
+                        <option value="Netflix">Netflix</option>
+                        <option value="Disney+">Disney+</option>
+                        <option value="OCS">OCS</option>
+                        <option value="Canal+">Canal+</option>
+                    </select>
+                </div>
+                <div class="form_element">
+                    <label for="note">Note sur 5</label><br>
+                    <input class="input_add_form" type="number" min="1" max="5" id="note_input"/>
                 </div>
             </div>
-            
+
             <button class="btn_add_form" onclick="add_card()">Ajouter à ma liste</button>
         </div>
         <p id="alerte_doublon_edit" style="color:red; display:none;">Cet élément existe déjà.</p><br>
