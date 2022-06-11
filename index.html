@@ -12,9 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Pridi:wght@300;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav></nav>
+    <nav>
+        <img style="height: 40px; width: auto;" src="img/logo.png">
+    </nav>
     <div id="page">
         <h1>La liste de mes séries</h1>
+
+        <!--IMAGES EN ROTATION-->
+        <div id="images_in_rotation">
+            <img class="img_to_rotate" src="img/ClapSeries.png">
+            <img class="img_to_rotate" src="img/Television.png">
+            <img class="img_to_rotate" src="img/RemoteControl.png">
+        </div>
 
         <!--FORMULAIRE D'AJOUT -->
         <div class="form">
@@ -24,12 +33,12 @@
             
             <div id="form_elements">
                 <div class="form_element">
-                    <label for="name">Nom</label><br>
+                    <label for="name">Nom :</label><br>
                     <input class="input_add_form" type="text" id="name_input">
                 </div>
                 <div class="form_element">
                     <label for="seasons">Nombre de saisons</label><br>
-                    <input class="input_add_form" type="number" id="seasons_input">
+                    <input class="input_add_form" type="number" min="1" id="seasons_input">
                 </div>
                 <div class="form_element">
                     <label for="plateform">Plateforme</label><br>
@@ -38,6 +47,7 @@
                         <option value="Disney+">Disney+</option>
                         <option value="OCS">OCS</option>
                         <option value="Canal+">Canal+</option>
+                        <option value="AmazonPrimeVideo">AmazonPrimeVideo</option>
                     </select>
                 </div>
                 <div class="form_element">
@@ -49,22 +59,36 @@
             <button class="btn_add_form" onclick="add_card()">Ajouter à ma liste</button>
         </div>
         <p id="alerte_doublon_edit" style="color:red; display:none;">Cet élément existe déjà.</p><br>
+        <p id="alerte_miss_edit" style="color:red; display:none;">Veuillez remplir tous les champs.</p><br>
 
         <!--AFFICHAGE DES ELEMENTS-->
         <div id="content"></div>
 
         <!--PRISE DE PHOTOS -->
-        <p><button onclick="getStream()">Ouvrir la caméra</button></p>
-        <p><video autoplay style="height: 180px; width: 240px;"></video></p>
-        <p><button onclick="takePhoto()">Prendre la photo</button></p>
-        <p><img id="imageTag" width="240" height="180"></p>
-
+        <div class="div_api_picture">
+            <h2>Prends-toi en photo en train de regarder ta série !</h2>
+            <div style="display:flex">
+                <p><button class="btn_open_camera" onclick="getStream()">Ouvrir la caméra</button></p>
+                <p><button onclick="takePhoto()">Prendre la photo</button></p>
+            </div>
+            <div style="float:left;width:50%">
+                <p><video autoplay style="height: 180px; width: 240px;"></video></p>
+            </div>
+            <div style="float:right;width:50%">
+                <p><img id="imageTag" width="240" height="180"></p>
+            </div>
+            <div style="clear:both;"></div>
+            
+        </div>
+        
         <!--AFFICHAGE DE LA MEMOIRE-->
         Your device memory is ~<b id="result">unknown</b> GiB.
     
         
 
     </div>
+
+   
     
         
     

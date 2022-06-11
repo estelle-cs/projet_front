@@ -13,15 +13,42 @@ body{
 /*La navbar*/
 nav{
     width: 100%;
-    height: 50px;
+    height: 40px;
+    padding: 7px;
     position: absolute;
     top: 0;
     left: 0;
     background-color: #363636;
 }
 
-/*Formulaire d'ajout*/
+/*Images en rotation*/
 
+#images_in_rotation{
+    margin: 40px 0px;
+}
+
+.img_to_rotate{
+    animation: rotation 5s infinite linear;
+    margin-right: 50px;
+    width: 50px;
+    height: auto;
+}
+
+.img_to_rotate:hover{
+    animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+
+/*Formulaire d'ajout*/
 .form{
     background-color: #363636;
     color: white;
@@ -41,10 +68,12 @@ nav{
 .input_add_form{
     background-color: #363636;
     font-family: 'Pridi', serif;
+    font-size:18px;
     color: white;
     border: none;
     border-bottom: 1px solid white;
     outline: none;
+    margin-bottom: 30px;
 }
 
 .btn_add_form{
@@ -58,6 +87,7 @@ nav{
     border-radius: 25px;
     cursor: pointer;
     transition: 0.3s;
+    margin-bottom: 10px;
 }
 
 .btn_add_form:hover{
@@ -65,33 +95,56 @@ nav{
 
 }
 
+/*FORMULAIRE DE MODIFICATION*/
+.input_edit_form{
+    background-color:#E7E7E7;
+    font-family: 'Pridi', serif;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid rgb(36, 36, 36);
+    width: 90px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
 /*LES CARTES*/
 .content_card{
     display: inline-block;
 }
 
 .card{
-    
     background-color:#E7E7E7; 
     width: 200px;
-    height: 350px;
+    height: 400px;
     margin:10px; 
     border-radius: 5px;
     box-shadow: 3px 3px 5px 1px rgba(54, 54, 54, 0.2);
 }
 
 .card_edit{
-    
     background-color:#E7E7E7; 
     width: 200px;
-    height: 350px;
+    height: 400px;
     margin:10px; 
     border-radius: 5px;
     box-shadow: 3px 3px 5px 1px rgba(54, 54, 54, 0.2);
 }
 
+.card:hover {
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+}
+
+.card_edit:hover{
+    transform: translateY(-5px) scale(1.005) translateZ(0);
+}
+
 .description_card{
-    padding: 0px 20px 10px 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 .img_card{
@@ -107,10 +160,23 @@ nav{
 
 .single_svg{
     cursor: pointer;
-    width: 20px;
+    width: 23px;
+}
+
+.label_infos_card{
+    margin-bottom: 10px;
 }
 
 .infos_card{
     font-weight: 800;
+}
+
+
+/*PRISE DE PHOTOS*/
+.div_api_picture{
+    background-color: rgb(224, 224, 224); 
+    padding: 20px 30px;
+    border-radius: 10px;
+
 }
 
