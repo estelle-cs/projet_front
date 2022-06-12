@@ -1,8 +1,14 @@
 document.addEventListener("DOMContentLoaded", async () => {
   await load_data(); 
-  //AFFICHAGE DE LA MEMOIRE
-  document.getElementById('result').innerHTML = navigator.deviceMemory || 'unknown'
+  //AFFICHAGE DE LA MEMOIRE TOUTES LES 10s
+  load_memory();
+
 });
+
+function load_memory(){
+  document.getElementById('result').innerHTML = navigator.deviceMemory || 'unknown'
+  setTimeout(load_memory,10000);
+}
 
 function load_data(){
   const contentElement = document.getElementById("content");

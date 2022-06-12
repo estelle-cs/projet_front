@@ -67,22 +67,23 @@
         <!--PRISE DE PHOTOS -->
         <div class="div_api_picture">
             <h2>Prends-toi en photo en train de regarder ta série !</h2>
+             <!--AFFICHAGE DE LA MEMOIRE-->
+            <p>La mémoire de votre appareil est de ~<b id="result">inconnu</b> GiB.</p>
             <div style="display:flex">
-                <p><button class="btn_open_camera" onclick="getStream()">Ouvrir la caméra</button></p>
-                <p><button onclick="takePhoto()">Prendre la photo</button></p>
+                <p><button style="margin-right: 20px;" class="btn_add_form btn_camera" onclick="getStream()">1. Ouvrir la caméra</button></p>
+                <p><button class="btn_add_form btn_camera" onclick="takePhoto()">2. Prendre la photo</button></p>
             </div>
-            <div style="float:left;width:50%">
-                <p><video autoplay style="height: 180px; width: 240px;"></video></p>
+            <div class="column1">
+                <p><video class="frame_camera" autoplay style="height: 180px; width: 240px;"></video></p>
             </div>
-            <div style="float:right;width:50%">
-                <p><img id="imageTag" width="240" height="180"></p>
+            <div class="column2">
+                <p><img class="frame_camera" id="imageTag" width="240" height="180"></p>
             </div>
             <div style="clear:both;"></div>
             
         </div>
         
-        <!--AFFICHAGE DE LA MEMOIRE-->
-        Your device memory is ~<b id="result">unknown</b> GiB.
+    
     
         
 
